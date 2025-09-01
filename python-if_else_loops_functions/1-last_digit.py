@@ -6,7 +6,7 @@ print(
     f"Last digit of {number} is {lastdigit} and " +
     (
         "is greater than 5" if lastdigit > 5
-        else "is zero" if lastdigit == 0
+        else "is 0" if lastdigit == 0
         else "is less than 6 and not 0"
     )
 )
