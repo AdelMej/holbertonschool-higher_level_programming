@@ -1,0 +1,11 @@
+# a python based directory to learn:
+- `if`, `if ... else`
+- comments
+- `while`, `for`
+- `break`, `continue`
+- `range`
+- functions
+- `return`
+- variable scopes
+- traceback
+- arithmetic operators:`+`, `-`, `*`, `/`, `%`
