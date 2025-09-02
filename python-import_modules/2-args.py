@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 
 if __name__ == "__main__":
-    print("{} argument".format(len(sys.argv) - 1), end="s:\n" if len(sys.argv) > 2 else "\n" if len(sys.argv) == 2 else "s.\n")
-    for i in range(1, len(sys.argv)):
-        print("{}: {}".format(i, sys.argv[i]))
+    n = len(argv) - 1
+    end_char = "s:" if n > 1 else ":" if n == 1 else "s."
+    print("{} argument{}".format(n, end_char))
+    for i in range(1, len(argv)):
+        print("{}: {}".format(i, argv[i]))
