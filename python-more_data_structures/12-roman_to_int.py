@@ -4,27 +4,32 @@ def roman_to_int(roman_string):
         return 0
 
     total = 0
-    roman_values = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+    rom_val = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000,
+    }
 
     i = 0
     while i < len(roman_string):
-        if roman_string[i] not in roman_values:
+        if roman_string[i] not in rom_val:
             i += 1
             continue
 
-        if is_power_of_10(roman_values[roman_string[i]]):
-            if i != len(roman_string) - 1 and (
-                roman_values[roman_string[i + 1]] > roman_values[roman_string[i]]
-            ):
-                total += (
-                    roman_values[roman_string[i + 1]] - roman_values[roman_string[i]]
-                )
+        current = rom_val[roman_string[i]]
+        if i < len(roman_string) - 1:
+            next = rom_val[roman_string[i + 1]]
+            if next > current:
+                total += next - current
                 i += 1
             else:
-                total += roman_values[roman_string[i]]
+                total += current
         else:
-            total += roman_values[roman_string[i]]
-
+            total += current
         i += 1
 
     return total
