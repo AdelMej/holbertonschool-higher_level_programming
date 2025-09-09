@@ -20,6 +20,10 @@
 >>> add_integer(2, -2)
 0
 
+# testing negative a and b
+>>> add_integer(-2, -2)
+-4
+
 # testing None a
 >>> add_integer(None, 2)
 Traceback (most recent call last):
@@ -31,6 +35,12 @@ TypeError: a must be an integer
 Traceback (most recent call last):
 	...
 TypeError: b must be an integer
+
+# testing None a and b
+>>> add_integer(None, None)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
 
 # testing float a
 >>> add_integer(2.12, 2)
@@ -44,6 +54,18 @@ TypeError: b must be an integer
 >>> add_integer(2.12, 2.12)
 4
 
+# testing negative float a
+>>> add_integer(-2.12, 2)
+0
+
+# testing negative float b
+>>> add_integer(2, -2.12)
+0
+
+# testing negative float a and b
+>>> add_integer(-2.12, -2.12)
+-4
+
 # testing string a
 >>> add_integer("a", 2)
 Traceback (most recent call last):
@@ -56,5 +78,25 @@ Traceback (most recent call last):
 	...
 TypeError: b must be an integer
 
+# testing string a and b
+>>> add_integer("a", "b")
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
 
+# testing massive int
+>>> add_integer(10**100, 1)
+10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001
+
+# testing default argument positive
+>>> add_integer(2)
+100
+
+# testing default argument negative
+>>> add_integer(-2)
+96
+
+# testing default argument zero
+>>> add_integer(0)
+98
 
