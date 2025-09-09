@@ -33,7 +33,3 @@ def roman_to_int(roman_string):
         i += 1
 
     return total
-
-
-def is_power_of_10(value):
-    return str(value)[0] == "1"
