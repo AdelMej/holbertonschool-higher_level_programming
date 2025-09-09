@@ -1,0 +1,60 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# testing a > b
+>>> add_integer(1, 2)
+3
+
+# testing a < b
+>>> add_integer(2, 1)
+3
+
+# testing a = b
+>>> add_integer(2, 2)
+4
+
+# testing negative a
+>>> add_integer(-2, 2)
+0
+
+# testing negative b
+>>> add_integer(2, -2)
+0
+
+# testing None a
+>>> add_integer(None, 2)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# testing None b
+>>> add_integer(2, None)
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+# testing float a
+>>> add_integer(2.12, 2)
+4
+
+# testing float b
+>>> add_integer(2, 2.12)
+4
+
+# tesintg float a and b
+>>> add_integer(2.12, 2.12)
+4
+
+# testing string a
+>>> add_integer("a", 2)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# testing string b
+>>> add_integer(2, "b")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+
+
