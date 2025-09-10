@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """Utility library for matrix division
 
 Provides a function for dividing matrices
