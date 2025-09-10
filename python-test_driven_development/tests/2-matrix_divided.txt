@@ -122,3 +122,35 @@ Traceback (most recent call last):
 	...
 TypeError: div must be a number
 
+# --- TEST INSIDE MATRIX ---
+# test string
+>>> matrix_divided([[1, 2, 3], [1, 2, "3"]], 2)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# test set
+>>> matrix_divided([[1, 2, 3], [1, 2, {1, 2}]], 2)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# test dic
+>>> matrix_divided([[1, 2, 3], [1, 2, {"oops": 2}]], 2)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# test list
+>>> matrix_divided([[1, 2, 3], [1, 2, [1, 2]]], 2)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# test tuple
+>>> matrix_divided([[1, 2, 3], [1, 2, (1, 2)]], 2)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
