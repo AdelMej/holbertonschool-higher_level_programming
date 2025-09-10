@@ -100,3 +100,76 @@ TypeError: a must be an integer
 >>> add_integer(0)
 98
 
+# testing list a
+>>> add_integer([1, 2], 2)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# testing list b
+>>> add_integer(2, [1, 2])
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+# testing list a and b
+>>> add_integer([1, 2], [1, 2])
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# testing dic a
+>>> add_integer({"abc": 2}, 2)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# testing dic b
+>>> add_integer(2, {"abc": 2})
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+# testing dic a and b
+>>> add_integer({"abc": 2}, {"abc": 2})
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# testing tuble a
+>>> add_integer((1, 2), 2)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# testing tuble b
+>>> add_integer(2, (1, 2))
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+# testing tuble a and b
+>>> add_integer((1, 2), (1, 2))
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# testing set a
+>>> add_integer({1, 2}, 2)
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+# testing set b
+>>> add_integer(2, {1, 2})
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+# testing set a and b
+>>> add_integer({1, 2}, {1, 2})
+Traceback (most recent call last):
+	...
+TypeError: a must be an integer
+
+
