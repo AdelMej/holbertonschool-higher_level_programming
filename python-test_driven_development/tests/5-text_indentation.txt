@@ -1,0 +1,69 @@
+# initial setup
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# --- USE CASE TEST ---
+# test separator `?`
+>>> text_indentation("oops? i messed up")
+oops?
+<BLANKLINE>
+i messed up
+
+# test separator `.`
+>>> text_indentation("oops. i messed up")
+oops.
+<BLANKLINE>
+i messed up
+
+# test separator `:`
+>>> text_indentation("oops: i messed up")
+oops:
+<BLANKLINE>
+i messed up
+
+# test no separator
+>>> text_indentation("oops i messed up")
+oops i messed up
+
+# --- EXCEPTION TEST ---
+# test int
+>>> text_indentation(12)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+# test float
+>>> text_indentation(12.12)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+# test None
+>>> text_indentation(None)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+# test list
+>>> text_indentation([1, 2])
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+# test tuple
+>>> text_indentation((1, 2))
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+# test dic
+>>> text_indentation({"oops": "my bad"})
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+# test set
+>>> text_indentation({1, 2})
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+

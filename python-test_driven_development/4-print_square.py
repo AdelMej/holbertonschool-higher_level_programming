@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 #!/usr/bin/python3-config
 """a library to print a square
 
