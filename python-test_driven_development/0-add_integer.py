@@ -2,6 +2,7 @@
 """add function utility.
 
 Provides an utility function for adding numbers
+Accept floats and integer values
 """
 
 
