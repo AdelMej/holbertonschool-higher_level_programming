@@ -1,0 +1,73 @@
+# initial setup
+>>> print_square = __import__('4-print_square').print_square
+
+# --- USE CASE TEST ---
+# test square 10
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+# test square 0
+>>> print_square(0)
+
+# test square 1
+>>> print_square(1)
+#
+
+# --- EXCEPTION ---
+# test < 0
+>>> print_square(-5)
+Traceback (most recent call last):
+	...
+ValueError: size must be >= 0
+
+# test float
+>>> print_square(2.12)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+# test string
+>>> print_square("2")
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+# test None
+>>> print_square(None)
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+# test list
+>>> print_square([1, 2])
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+# test tuple
+>>> print_square((1, 2))
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+# test dic
+>>> print_square({"oops": 2})
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
+# test set
+>>> print_square({1, 2})
+Traceback (most recent call last):
+	...
+TypeError: size must be an integer
+
