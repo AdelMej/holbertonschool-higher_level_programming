@@ -1,0 +1,97 @@
+# initial setup
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# --- USE CASE TEST ---
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+>>> say_my_name("John")
+My name is John
+
+# --- EXCEPTION TEST ---
+# --- first name ---
+# test int
+>>> say_my_name(12, "Smith")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+# test float
+>>> say_my_name(12.0, "Smith")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+# test list
+>>> say_my_name(["oops", "mybad"], "Smith")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+# test tuple
+>>> say_my_name(("oops", "my bad"), "Smith")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+# test dic
+>>> say_my_name({"oops": "mybad"}, "Smith")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+# test set
+>>> say_my_name({"oops", "my bad"}, "Smith")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+# test None
+>>> say_my_name(None, "Smith")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+# --- last name ---
+# test int
+>>> say_my_name("John", 2)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+# test float
+>>> say_my_name("John", 2.0)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+# test list
+>>> say_my_name("John", ["oops", "mybad"])
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+# test tuple
+>>> say_my_name("John", ("oops", "my bad"))
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+# test dic
+>>> say_my_name("John", {"oops": "mybad"})
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+# test set
+>>> say_my_name("John", {"oops", "my bad"})
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
+# test None
+>>> say_my_name("John", None)
+Traceback (most recent call last):
+	...
+TypeError: last_name must be a string
+
