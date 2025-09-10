@@ -37,6 +37,12 @@
 
 # --- TEST EXCEPTION ---
 # --- test matrix ---
+# test None
+>>> matrix_divided(None, 2)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 # test int
 >>> matrix_divided(2, 2)
 Traceback (most recent call last):
@@ -92,6 +98,12 @@ Traceback (most recent call last):
 TypeError: Each row of the matrix must have the same size
 
 # --- test div ---
+# test None
+>>> matrix_divided(matrix, None)
+Traceback (most recent call last):
+	...
+TypeError: div must be a number
+
 # test string
 >>> matrix_divided(matrix, "2")
 Traceback (most recent call last):
@@ -123,6 +135,12 @@ Traceback (most recent call last):
 TypeError: div must be a number
 
 # --- TEST INSIDE MATRIX ---
+# test None
+>>> matrix_divided([[1, 2, 3], [1, 2, None]], 2)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 # test string
 >>> matrix_divided([[1, 2, 3], [1, 2, "3"]], 2)
 Traceback (most recent call last):
