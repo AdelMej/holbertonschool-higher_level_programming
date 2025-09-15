@@ -112,7 +112,7 @@ class Rectangle:
 
         Returns:
             empty string if width or height is equal to 0
-            else a string formated like the print function
+            else a formated string
         """
         if self.__width == 0 or self.__height == 0:
             return ""
