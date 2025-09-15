@@ -3,6 +3,8 @@
 
 empty class for now
 """
+
+
 class Square():
     """square class for square operations
 
