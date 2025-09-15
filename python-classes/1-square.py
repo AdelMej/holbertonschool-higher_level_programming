@@ -3,6 +3,8 @@
 
 empty class for now
 """
+
+
 class Square():
     """square class for square operations
 
@@ -11,4 +13,10 @@ class Square():
     Attributes:
         no Attributes
     """
-    pass
+    def __init__(self, size):
+        """Square constructor
+
+        Attributes:
+            size(int): the size of the square
+        """
+        self.__size = size
