@@ -73,17 +73,6 @@ class Square():
 
         self.__size = size
 
-    @size.getter
-    def size(self):
-        """size getter function
-
-        function to get size
-
-        Returns:
-            __size(int): the private size attribute
-        """
-        return self.__size
-
     @property
     def position(self):
         """property function
@@ -105,22 +94,13 @@ class Square():
         if (
             not isinstance(position, tuple)
             or len(position) != 2
-            or all(isinstance(i, int) and i <= 0 for i in position)
+            or all(isinstance(i, int) and i < 0 for i in position)
         ):
             raise TypeError(
                 "position must be a tuple of 2 positive integers"
             )
 
         self.__position = position
-
-    @position.getter
-    def position(self):
-        """ position function getter
-
-        Returns:
-            __position(tuple): private attribute position
-        """
-        return self.__position
 
     def my_print(self):
         """print a square
@@ -141,5 +121,3 @@ class Square():
             for _ in range(self.__size):
                 print("#", end="")
             print()
-
-
