@@ -176,9 +176,6 @@ class Rectangle:
         Args:
             size(int): represent a square size
         Returns:
-            instance(obj): a new rectangle with square dimension
+            a new rectangle with square dimension
         """
-        instance = super(Rectangle, cls).__new__(cls)
-        instance.__width = size
-        instance.__height = size
-        return instance
+        return cls(size, size)
