@@ -33,7 +33,7 @@ class Square():
         if (
             not isinstance(position, tuple)
             or len(position) != 2
-            or all(isinstance(i, int) and i <= 0 for i in position)
+            or all(isinstance(i, int) and i < 0 for i in position)
         ):
             raise TypeError(
                 "position must be a tuple of 2 positive integers"
