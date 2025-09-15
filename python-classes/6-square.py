@@ -5,7 +5,7 @@ empty class for now
 """
 
 
-class Square:
+class Square():
     """square class for square operations
 
     store meta data for squares
@@ -18,7 +18,19 @@ class Square:
             size(int): the size of the square
             position(tuple): the position of the square
 
+        Raises:
+            TypeError: if size is not an integer
+            TypeError: if position is not a tuple
+            TypeError: if position is not a tuple of int
+            TypeError: if position int are < 0
+            ValueError: if size is < 0
         """
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+
+        if size < 0:
+            raise ValueError("size must be >= 0")
+
         self.__size = size
         self.__position = position
 
@@ -50,7 +62,19 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
+
         self.__size = size
+
+    @size.getter
+    def size(self):
+        """size getter function
+
+        function to get size
+
+        Returns:
+            __size(int): the private size attribute
+        """
+        return self.__size
 
     @property
     def position(self):
@@ -73,7 +97,7 @@ class Square:
         if (
             not isinstance(position, tuple)
             or len(position) != 2
-            or not all(isinstance(i, int) and i >= 0 for i in position)
+            or all(isinstance(i, int) and i <= 0 for i in position)
         ):
             raise TypeError(
                 "position must be a tuple of 2 positive integers"
@@ -81,15 +105,20 @@ class Square:
 
         self.__position = position
 
+    @position.getter
+    def position(self):
+        """ position function getter
+
+        Returns:
+            __position(tuple): private attribute position
+        """
+        return self.__position
+
     def my_print(self):
         """print a square
 
         function that print a square
         """
-        if (self.__size == 0):
-            print()
-            return
-
         for _ in range(self.__position[1]):
             print()
 
@@ -99,4 +128,7 @@ class Square:
 
             for _ in range(self.__size):
                 print("#", end="")
+            print()
+
+        if (self.__size == 0):
             print()
