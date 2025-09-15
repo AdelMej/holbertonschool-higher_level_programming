@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """square class file
 
-empty class for now
+containing a square class
 """
 
 
@@ -11,7 +11,7 @@ class Square():
     does nothing
 
     Attributes:
-        no Attributes
+        __size(int): private size attribute
     """
     def __init__(self, size):
         """Square constructor
