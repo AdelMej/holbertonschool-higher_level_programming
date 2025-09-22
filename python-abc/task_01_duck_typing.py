@@ -1,56 +1,54 @@
 #!/usr/bin/python3
-"""
-file containing shape classes
-"""
+"""File containing shape classes"""
 from abc import ABC, abstractmethod
 import math
 
 
 class Shape(ABC):
-    """abstract class defining a shape """
+    """Abstract class defining a shape"""
     @abstractmethod
     def area(self):
-        """abstract method for the area of a shape """
+        """Abstract method for the area of a shape"""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """abstract method for the perimeter of a shape"""
+        """Abstract method for the perimeter of a shape"""
         pass
 
 
 class Circle(Shape):
-    """a class representing a circle """
+    """Class representing a circle"""
     def __init__(self, radius):
-        """Circle constructor """
+        """Circle constructor"""
         self.radius = radius
 
     def area(self):  # type:ignore
-        """a method that return the area of a circle"""
+        """Method that return the area of a circle"""
         return math.pi * (self.radius**2)
 
     def perimeter(self):  # type: ignore
-        """a method that return the perimeter of a circle """
+        """Method that return the perimeter of a circle """
         return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
-    """a class representing a rectangle """
+    """Class representing a rectangle"""
     def __init__(self, width, height):
         """Rectangle constructor """
         self.width = width
         self.height = height
 
     def area(self):  # type: ignore
-        """a method returning the area of a rectangle """
+        """Method returning the area of a rectangle"""
         return self.width * self.height
 
     def perimeter(self):  # type: ignore
-        """a method returning the perimeter of a rectangle """
+        """Method returning the perimeter of a rectangle"""
         return 2 * (self.width + self.height)
 
 
 def shape_info(obj):
-    """ a function that print shape information """
+    """Function that print shape information"""
     print("Area: {}".format(obj.area()))
     print("Perimeter: {}".format(obj.perimeter()))
