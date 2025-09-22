@@ -1,0 +1,53 @@
+# initalization
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(3)
+>>> my_list.append(12)
+>>> my_list.append(1)
+>>> my_list.append(242)
+>>> my_list.append(5)
+
+# test basic
+>>> my_list.print_sorted()
+[1, 3, 5, 12, 242]
+
+>>> print(my_list)
+[3, 12, 1, 242, 5]
+
+# test duplicate
+>>> my_list.append(3)
+>>> my_list.print_sorted()
+[1, 3, 3, 5, 12, 242]
+
+>>> print(my_list)
+[3, 12, 1, 242, 5, 3]
+
+# test negative
+>>> neg_list = MyList()
+>>> neg_list.append(-12)
+>>> neg_list.append(-600)
+>>> neg_list.append(-1)
+>>> neg_list.append(-5)
+
+>>> neg_list.print_sorted()
+[-600, -12, -5, -1]
+
+>>> print(neg_list)
+[-12, -600, -1, -5]
+
+# empty list
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+>>> print(my_list)
+[]
+
+# single element list
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[2]
+
+>>> print(my_list)
+[2]
+

@@ -1,0 +1,25 @@
+# initial setup
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+# test basic
+>>> bg.integer_validator("valid", 10)
+
+# test not an int
+>>> bg.integer_validator("oops", (1, 2))
+Traceback (most recent call last):
+	...
+TypeError: oops must be an integer
+
+# test invalid int
+>>> bg.integer_validator("oops", -12)
+Traceback (most recent call last):
+	...
+ValueError: oops must be greater than 0
+
+>>> bg.integer_validator("oops", 0)
+Traceback (most recent call last):
+	...
+ValueError: oops must be greater than 0
+
+
