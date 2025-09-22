@@ -36,7 +36,7 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     """a class representing a rectangle """
-    def __init__(self, width, height) -> None:
+    def __init__(self, width, height):
         """Rectangle constructor """
         self.width = width
         self.height = height
