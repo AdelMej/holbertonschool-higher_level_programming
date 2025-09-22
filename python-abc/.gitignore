@@ -1,0 +1,7 @@
+*
+!*.py
+*-main.py
+!/tests/
+!/tests/**
+!README.md
+!.gitignore
