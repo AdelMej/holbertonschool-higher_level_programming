@@ -1,6 +1,6 @@
 *
 !*.py
-*-main.py
+main*.py
 !/tests/
 !/tests/**
 !README.md
