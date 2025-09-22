@@ -2,7 +2,7 @@
 file containing shape classes
 """
 from abc import ABC, abstractmethod
-from math import pi
+import math
 
 
 class Shape(ABC):
@@ -26,11 +26,11 @@ class Circle(Shape):
 
     def area(self):  # type:ignore
         """a method that return the area of a circle"""
-        return pi * (self.radius**2)
+        return math.pi * (self.radius**2)
 
     def perimeter(self):  # type: ignore
         """a method that return the perimeter of a circle """
-        return 2 * pi * self.radius
+        return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
