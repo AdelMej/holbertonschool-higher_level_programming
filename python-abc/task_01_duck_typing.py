@@ -6,7 +6,7 @@ from math import pi
 
 
 class Shape(ABC):
-    """ abstract class definining a shape """
+    """ abstract class defining a shape """
     @abstractmethod
     def area(self) -> float:
         """ abstrac method for the area of a shape """
@@ -24,7 +24,7 @@ class Circle(Shape):
         """ Circle constructor """
         self.radius = radius
 
-    def area(self):
+    def area(self) -> float:
         """ a method that return the area of a circle"""
         return pi * self.radius**2
 
@@ -49,7 +49,7 @@ class Rectangle(Shape):
         return 2 * (self.width + self.height)
 
 
-def shape_info(thing):
+def shape_info(shape):
     """ a function that print shape information """
-    print("Area:", thing.area())
-    print("Perimeter:", thing.perimeter())
+    print("Area:", shape.area())
+    print("Perimeter:", shape.perimeter())
