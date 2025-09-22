@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 a file containing a flying fish beware
 """
