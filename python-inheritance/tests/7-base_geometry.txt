@@ -22,4 +22,42 @@ Traceback (most recent call last):
 	...
 ValueError: oops must be greater than 0
 
+>>> bg.integer_validator("oops", None)
+Traceback (most recent call last):
+	...
+TypeError: oops must be an integer
 
+>>> bg.integer_validator("oops", "abc")
+Traceback (most recent call last):
+	...
+TypeError: oops must be an integer
+
+>>> bg.integer_validator("oops", (1, 2))
+Traceback (most recent call last):
+	...
+TypeError: oops must be an integer
+
+>>> bg.integer_validator("oops", 12.12)
+Traceback (most recent call last):
+	...
+TypeError: oops must be an integer
+
+>>> bg.integer_validator("oops", [1, 2])
+Traceback (most recent call last):
+	...
+TypeError: oops must be an integer
+
+>>> bg.integer_validator("oops", {1, 2})
+Traceback (most recent call last):
+	...
+TypeError: oops must be an integer
+
+>>> bg.integer_validator("oops", {"NANI": 666})
+Traceback (most recent call last):
+	...
+TypeError: oops must be an integer
+
+>>> bg.integer_validator("oops", True)
+Traceback (most recent call last):
+	...
+TypeError: oops must be an integer
