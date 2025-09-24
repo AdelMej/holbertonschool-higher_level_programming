@@ -5,6 +5,8 @@
 # test basic
 >>> bg.integer_validator("valid", 10)
 
+>>> bg.integer_validator("oops", 9999999999999999999999999)
+
 # test not an int
 >>> bg.integer_validator("oops", (1, 2))
 Traceback (most recent call last):
@@ -60,4 +62,15 @@ TypeError: oops must be an integer
 >>> bg.integer_validator("oops", True)
 Traceback (most recent call last):
 	...
+TypeError: oops must be an integer
+
+>>> class Foo: pass
+>>> bg.integer_validator("oops", Foo())
+Traceback (most recent call last):
+    ...
+TypeError: oops must be an integer
+
+>>> bg.integer_validator("oops", b"123")
+Traceback (most recent call last):
+    ...
 TypeError: oops must be an integer
