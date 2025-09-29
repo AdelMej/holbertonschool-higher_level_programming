@@ -17,8 +17,6 @@ class Student:
         if isinstance(attrs, list):
             result = {}
             for i in attrs:
-                if not isinstance(i, str):
-                    return self.__dict__
                 if i in self.__dict__:
                     result[i] = self.__dict__[i]
             return result
