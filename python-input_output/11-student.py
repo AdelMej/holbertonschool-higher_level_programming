@@ -16,15 +16,15 @@ class Student:
         """Json represnetation of the student class"""
         if isinstance(attrs, list):
             result = {}
-            for i in attrs:
-                if i in self.__dict__:
-                    result[i] = self.__dict__[i]
+            for attr in attrs:
+                if isinstance(attr, str) and attr in self.__dict__:
+                    result[attr] = self.__dict__[attr]
             return result
         else:
             return self.__dict__
 
     def reload_from_json(self, json):
         """Function to relaod my class from a json"""
-        self.first_name = json["first_name"]
-        self.last_name = json["last_name"]
-        self.age = json["age"]
+        for key in json:
+            if key in self.__dict__:
+                setattr(self, key, json[key])
