@@ -20,5 +20,6 @@ def convert_csv_to_json(filename):
                     line += ','
                 f.write(line + "\n")
             f.write("]\n")
+        return True
     except FileNotFoundError:
         return False
