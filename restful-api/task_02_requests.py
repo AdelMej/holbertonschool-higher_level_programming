@@ -4,7 +4,10 @@ import csv
 
 
 def fetch_and_print_posts():
-    response = requests.get("https://jsonplaceholder.typicode.com/posts", "get")
+    response = requests.get(
+        "https://jsonplaceholder.typicode.com/posts",
+        "get"
+    )
     print("Status Code: {}".format(response.status_code))
     fetched = response.json()
     for value in fetched:
@@ -12,7 +15,10 @@ def fetch_and_print_posts():
 
 
 def fetch_and_save_posts():
-    response = requests.get("https://jsonplaceholder.typicode.com/posts", "get")
+    response = requests.get(
+        "https://jsonplaceholder.typicode.com/posts",
+        "get"
+    )
     print("Status Code: {}".format(response.status_code))
     fetched = response.json()
 
