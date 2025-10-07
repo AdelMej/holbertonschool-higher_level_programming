@@ -37,9 +37,9 @@ class Server(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(info).encode(encoding="utf-8"))
         else:
             self.send_response(404)
-            self.send_header('Content-type', 'text/html')
+            self.send_header('Content-type', 'error/html')
             self.end_headers()
-            self.wfile.write(b"404 Not Found")
+            self.wfile.write(b"Endpoint not found")
 
 
 my_serv = HTTPServer(('localhost', 8000), Server)
