@@ -12,13 +12,9 @@ class Server(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == '/':
             self.send_response(200)
-            self.send_header('Content-type', 'text/html')
-            self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
         elif self.path == '/data':
             self.send_response(200)
-            self.send_header('Content-type', 'application/json')
-            self.end_headers()
             data = {"name": "John", "age": 30, "city": "New York"}
             self.wfile.write(json.dumps(data).encode(encoding="utf-8"))
         elif self.path == '/status':
@@ -36,10 +32,7 @@ class Server(BaseHTTPRequestHandler):
             }
             self.wfile.write(json.dumps(info).encode(encoding="utf-8"))
         else:
-            self.send_response(404)
-            self.send_header('Content-type', 'error/html')
-            self.end_headers()
-            self.wfile.write(b"Endpoint not found")
+            self.send_error(404, 'Endpoint not found')
 
 
 my_serv = HTTPServer(('localhost', 8000), Server)
