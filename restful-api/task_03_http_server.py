@@ -5,27 +5,26 @@ import json
 
 class Server(BaseHTTPRequestHandler):
     """class for handling http request"""
-    def __init__(self, *args, **kwargs):
-        """init method"""
-        super().__init__(*args, **kwargs)
-
     def do_GET(self):
         if self.path == '/':
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
+
         elif self.path == '/data':
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             data = {"name": "John", "age": 30, "city": "New York"}
             self.wfile.write(json.dumps(data).encode(encoding="utf-8"))
+
         elif self.path == '/status':
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
             self.end_headers()
-            self.wfile.write(b"ok")
+            self.wfile.write(b"OK")
+
         elif self.path == '/info':
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
@@ -39,5 +38,5 @@ class Server(BaseHTTPRequestHandler):
             self.send_error(404, 'Endpoint not found')
 
 
-my_serv = HTTPServer(('localhost', 8000), Server)
+my_serv = HTTPServer(('0.0.0.0', 8000), Server)
 my_serv.serve_forever()
