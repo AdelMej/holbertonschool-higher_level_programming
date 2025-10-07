@@ -26,7 +26,7 @@ def show_user(username):
     if user:
         return jsonify(user), 200
     else:
-        return jsonify({"error": "User not found"}), 404
+        return jsonify(error="User not found"), 404
 
 
 @app.route("/add_user", methods=["POST"])
