@@ -40,5 +40,5 @@ class Server(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    my_serv = HTTPServer(('0.0.0.0', 8000), Server)
+    my_serv = HTTPServer(('localhost', 8000), Server)
     my_serv.serve_forever()
