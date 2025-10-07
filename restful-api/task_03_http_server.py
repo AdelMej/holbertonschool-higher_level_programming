@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """File for making a small api server."""
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
