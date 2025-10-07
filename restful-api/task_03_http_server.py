@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """File for making a small api server."""
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler
 import json
 
 
@@ -22,7 +22,7 @@ class Server(BaseHTTPRequestHandler):
 
         elif self.path == '/status':
             self.send_response(200)
-            self.send_header('Content-type', 'text/html')
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(b"OK")
 
@@ -41,8 +41,3 @@ class Server(BaseHTTPRequestHandler):
             self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(b"Endpoint not found")
-
-
-if __name__ == "__main__":
-    my_serv = HTTPServer(('localhost', 8000), Server)
-    my_serv.serve_forever()
