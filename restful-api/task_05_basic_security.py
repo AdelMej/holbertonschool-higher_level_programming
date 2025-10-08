@@ -8,6 +8,7 @@ from flask_jwt_extended import get_jwt
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 auth = HTTPBasicAuth()
 app.config["JWT_SECRET_KEY"] = "secret-key"
 jwt = JWTManager(app)
