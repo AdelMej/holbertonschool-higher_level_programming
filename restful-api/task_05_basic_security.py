@@ -188,5 +188,8 @@ def handle_needs_fresh_token_error(err):
     return jsonify(error="Unauthorized"), 401
 
 
+"""
+--Main--
+"""
 if __name__ == "__main__":
     app.run()
