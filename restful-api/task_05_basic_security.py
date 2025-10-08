@@ -135,26 +135,56 @@ All must return 401 for unauthorized access
 
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
+    """
+    Function to handle unauthorized errors for JWT Auth
+
+    Return:
+        Unauthorized error message with 401 status code
+    """
     return jsonify(error="Unauthorized"), 401
 
 
 @jwt.invalid_token_loader
 def handle_invalid_token_error(err):
+    """
+    Function to handle invalid token errors for JWT Auth
+
+    Return:
+        Unauthorized error message with 401 status code
+    """
     return jsonify(error="Unauthorized"), 401
 
 
 @jwt.expired_token_loader
 def handle_expired_token_error(err):
+    """
+    Function to handle expired token errors for JWT Auth
+
+    Return:
+        Unauthorized error message with 401 status code
+    """
     return jsonify(error="Unauthorized"), 401
 
 
 @jwt.revoked_token_loader
 def handle_revoked_token_error(err):
+    """
+    Function to handle revoked token errors for JWT Auth
+
+    Return:
+        Unauthorized error message with 401 status code
+    """
     return jsonify(error="Unauthorized"), 401
 
 
 @jwt.needs_fresh_token_loader
 def handle_needs_fresh_token_error(err):
+    """
+    Function to handle needs fresh token errors for JWT Auth
+
+    Return:
+        Unauthorized error message with 401 status code
+    """
     return jsonify(error="Unauthorized"), 401
 
 
