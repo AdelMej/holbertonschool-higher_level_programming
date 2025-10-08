@@ -56,7 +56,7 @@ def login():
             additional_claims={"role": user["role"]}
         )
         return jsonify(access_token=token)
-    return jsonify(message="Unauthorized"), 401
+    return jsonify(error="Unauthorized"), 401
 
 
 @app.route('/admin-only', methods=['GET'])
