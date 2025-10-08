@@ -49,17 +49,14 @@ def login():
     password = data.get('password')
 
     user = users.get(username)
-    if not user:
-        return jsonify(message="401 Unauthorized"), 401
-
-    if check_password_hash(user["password"], password):
+    if user and check_password_hash(user["password"], password):
         token = create_access_token(
             identity=username,
             additional_claims={"role": user["role"]}
         )
         return jsonify(access_token=token)
     else:
-        return jsonify(message="401 Unauthorized"), 401
+        return jsonify(message="Unauthorized"), 401
 
 
 @app.route('/admin-only', methods=['GET'])
@@ -67,7 +64,7 @@ def login():
 def admin_only():
     user = get_jwt()
     if user["role"] != 'admin':
-        return "403 Forbidden", 403
+        return jsonify(error="Admin access required"), 403
     else:
         return "Admin Access Granted", 200
 
