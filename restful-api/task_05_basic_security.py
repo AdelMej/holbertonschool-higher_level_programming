@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_httpauth import HTTPBasicAuth
-from flask_jwt_extended import JWTManager
 from flask_jwt_extended import (
-        create_access_token, jwt_required, get_jwt
+    JWTManager,
+    create_access_token,
+    jwt_required,
+    get_jwt
 )
 from flask import Flask, jsonify, request
 """
