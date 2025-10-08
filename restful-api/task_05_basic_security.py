@@ -2,9 +2,9 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_httpauth import HTTPBasicAuth
 from flask_jwt_extended import JWTManager
-from flask_jwt_extended import create_access_token
-from flask_jwt_extended import jwt_required
-from flask_jwt_extended import get_jwt
+from flask_jwt_extended import (
+        create_access_token, jwt_required, get_jwt
+)
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
@@ -56,8 +56,7 @@ def login():
             additional_claims={"role": user["role"]}
         )
         return jsonify(access_token=token)
-    else:
-        return jsonify(message="Unauthorized"), 401
+    return jsonify(message="Unauthorized"), 401
 
 
 @app.route('/admin-only', methods=['GET'])
@@ -78,32 +77,33 @@ def jwt_protected():
 
 """
 --- TOKEN ERROR HANDLERS ---
+All must return 401 for unauthorized access
 """
 
 
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
-    return jsonify({"error": "Missing or invalid token"}), 401
+    return jsonify(error="Missing or invalid token"), 401
 
 
 @jwt.invalid_token_loader
 def handle_invalid_token_error(err):
-    return jsonify({"error": "Invalid token"}), 401
+    return jsonify(error="Missing or invalid token"), 401
 
 
 @jwt.expired_token_loader
 def handle_expired_token_error(err):
-    return jsonify({"error": "Token has expired"}), 401
+    return jsonify(error="Missing or invalid token"), 401
 
 
 @jwt.revoked_token_loader
 def handle_revoked_token_error(err):
-    return jsonify({"error": "Token has been revoked"}), 401
+    return jsonify(error="Missing or invalid token"), 401
 
 
 @jwt.needs_fresh_token_loader
 def handle_needs_fresh_token_error(err):
-    return jsonify({"error": "Fresh token required"}), 401
+    return jsonify(error="Missing or invalid token"), 401
 
 
 if __name__ == "__main__":
