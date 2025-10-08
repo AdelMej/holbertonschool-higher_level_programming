@@ -66,7 +66,7 @@ def admin_only():
     if user["role"] != 'admin':
         return jsonify(error="Admin access required"), 403
     else:
-        return "Admin Access Granted", 200
+        return "Admin Access: Granted", 200
 
 
 @app.route('/jwt-protected', methods=['GET'])
@@ -83,27 +83,27 @@ All must return 401 for unauthorized access
 
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
-    return jsonify(error="Missing or invalid token"), 401
+    return jsonify(error="Unauthorized"), 401
 
 
 @jwt.invalid_token_loader
 def handle_invalid_token_error(err):
-    return jsonify(error="Missing or invalid token"), 401
+    return jsonify(error="Unauthorized"), 401
 
 
 @jwt.expired_token_loader
 def handle_expired_token_error(err):
-    return jsonify(error="Missing or invalid token"), 401
+    return jsonify(error="Unauthorized"), 401
 
 
 @jwt.revoked_token_loader
 def handle_revoked_token_error(err):
-    return jsonify(error="Missing or invalid token"), 401
+    return jsonify(error="Unauthorized"), 401
 
 
 @jwt.needs_fresh_token_loader
 def handle_needs_fresh_token_error(err):
-    return jsonify(error="Missing or invalid token"), 401
+    return jsonify(error="Unauthorized"), 401
 
 
 if __name__ == "__main__":
