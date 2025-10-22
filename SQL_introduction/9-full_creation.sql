@@ -1,3 +1,4 @@
+-- creates a table if it doesn't exist and add 4 users in it
 CREATE TABLE IF NOT EXISTS second_table (
 	id INT,
 	name VARCHAR(256),
