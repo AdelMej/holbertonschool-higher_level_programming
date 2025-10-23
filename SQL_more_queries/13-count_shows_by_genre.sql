@@ -7,4 +7,4 @@ INNER JOIN tv_genres
 ON tv_show_genres.genre_id = tv_genres.id
 GROUP BY tv_genres.name
 HAVING count(tv_shows.id) > 0
-ORDER BY number_of_shows
+ORDER BY number_of_shows DESC
