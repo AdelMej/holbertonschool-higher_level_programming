@@ -1,6 +1,5 @@
 """
 File containing a script for Selecting all states
-From hbtn_0e_6_usa
 """
 from sys import argv
 from sqlalchemy import (create_engine)
