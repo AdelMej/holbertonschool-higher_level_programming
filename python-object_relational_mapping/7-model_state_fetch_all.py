@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 File containing a script for Selecting all states
 """
