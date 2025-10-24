@@ -6,6 +6,7 @@ Query all the states starting by N
 from sys import argv
 import MySQLdb
 
+
 if __name__ == "__main__":
     mysql_username = argv[1]
     mysql_password = argv[2]
@@ -21,7 +22,12 @@ if __name__ == "__main__":
     )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE states.name LIKE 'N%' ORDER BY states.id ASC")
+    cursor.execute("""
+                   SELECT *
+                   FROM states
+                   WHERE states.name LIKE 'N%'
+                   ORDER BY states.id ASC"""
+                   )
     for query in cursor.fetchall():
         print(query)
 
