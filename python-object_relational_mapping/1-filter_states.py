@@ -16,7 +16,7 @@ if __name__ == "__main__":
         user=mysql_username,
         passwd=mysql_password,
         db=mysql_database,
-        port=3308,
+        port=3306,
         charset="utf8mb4"
     )
 
