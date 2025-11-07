@@ -6,11 +6,11 @@ if (isNaN(size)) console.log('Missing size');
 else {
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
-      result += 'x';
+      result += 'X';
     }
     if (i < size - 1) {
       result += '\n';
     }
   }
+  console.log(result);
 }
-console.log(result);
