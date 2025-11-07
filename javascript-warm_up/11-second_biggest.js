@@ -8,7 +8,7 @@ if (argv.length <= 3) {
 } else {
   max = Number(argv[2]);
   for (let i = 3; i < argv.length; i++) {
-    const n = argv[i];
+    const n = Number(argv[i]);
     if (n > max) {
       sec = max;
       max = n;
