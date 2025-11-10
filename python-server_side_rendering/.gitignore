@@ -1,0 +1,6 @@
+*
+!README.md
+!.gitignore
+!*.py
+*-main.py
+output_*.py
