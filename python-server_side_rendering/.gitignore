@@ -4,3 +4,5 @@
 !*.py
 *-main.py
 output_*.py
+!templates/
+!templates/**
