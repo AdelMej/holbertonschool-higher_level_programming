@@ -6,3 +6,4 @@
 output_*.py
 !templates/
 !templates/**
+!items.json
