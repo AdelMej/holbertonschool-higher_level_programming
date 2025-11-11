@@ -6,8 +6,8 @@
 	<body>
 		<ul>
 		{% if items %}
-			{% for item in items["items"] %}
-				<li>{{item}}</li>
+			{% for item in items %}
+				<li>{{ item }}</li>
 			{% endfor %}
 		{% else %}
 			No items found
