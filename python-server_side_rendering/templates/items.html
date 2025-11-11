@@ -1,0 +1,7 @@
+{% if items %}
+	{% for item in items["items"] %}
+		<li>{{item}}</li>
+	{% endfor %}
+{% else %}
+	No items found
+{% endif %}
